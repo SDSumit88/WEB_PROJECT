@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>showing info</title>
+ <style>
+      table{text-align:center;}
+      h1{text-align:center;}
+ </style>
+ <style>
+     table
+     {
+        margin-left:41%;
+        background-color:aqua;
+        
+     
+     }
+ 
+ </style>
+</head>
+<body>
+  <h1><u>Showing student details</u></h1>
+<table border="1">
+<tr>
+ <th>kodId</th>
+ <th>name</th>
+ <th>branch</th>
+ </tr>
+ <tr>
+   <td>th:text="${Student.kodId}"</td>
+   <td>th:text="${Student.name}"</td>
+  <td>th:text="${Student.branch}"</td>
+  </tr>
+  
+</table>
+
+
+
+
+
+
+
+</body>
+</html>

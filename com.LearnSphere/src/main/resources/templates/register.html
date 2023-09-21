@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>REGISTRATION PAGE</title>
+<style >
+ h1
+ {
+   color:gray;
+   text-align:center;
+ 
+ }
+ 
+
+ fieldset {
+ 
+ border:5px solid grey;
+   margin-left:38%;
+    margin-right:50%;
+    width:200px;
+    height:400px;
+	
+}
+ form
+ {
+   background-color:yellow;
+ }
+
+</style>
+</head>
+<body>
+  <h1>Welcome To LearnSphere</h1><br>
+  <fieldset style="width:270px">
+   <legend>Register here</legend>
+  <form action="/addUser" method="post">
+    <label>First Name</label><br>
+    <input type="text" name="fisrt name" required><br>
+      <label>Last Name</label><br>
+    <input type="text" name="last name" required><br>
+      <label>Email</label><br>
+    <input type="text" name="Email" required><br>
+      <label>password</label><br>
+    <input type="password" name="password" required><br>
+       <label>Mobile</label><br>
+    <input type="text" name="number" required><br><br>
+      <label>Role </label>
+    <input type="radio" name="role" value="trainer" >Trainer
+    <input type="radio" name="role" value="student" >Student 
+    <br><br>
+    
+    <input type="submit" value="Register">
+    
+     <h5>Already have an account ?</h5><a href="/login" style="color:black;">Log in</a>
+    
+    </fieldset>
+    
+    
+  
+  
+  </form>
+  <marquee style="color:red">India's leading Learning platform LearnSphere</marquee>
+</body>
+</html>
