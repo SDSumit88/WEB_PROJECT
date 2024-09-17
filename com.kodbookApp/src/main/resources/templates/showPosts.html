@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+       <h2>Post Details</h2>
+       <div class="profile-details">
+       <span th:each="post:${allPosts}">
+       <p><strong>Photo:</strong><p>
+       <img th:if="${post.photoBase64}"
+        th:src=" 'data:image/jpeg;base64,' + ${post.photoBase64}"
+        alt="Profile Photo" />
+        <p><strong>Caption:</strong>
+        <span th:text="${post.caption}"></span></p>
+        </span>
+        </div>
+</body>
+</html>
