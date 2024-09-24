@@ -25,4 +25,11 @@ public class PostServiceImplementation implements  PostService{
 		// TODO Auto-generated method stub
 		return prepo.findAll();
 	}
+
+	@Override
+	public List<Post> fetchAllPosts() {
+		// TODO Auto-generated method stub
+		
+		return prepo.findAll();
+	}
 }

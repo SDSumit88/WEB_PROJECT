@@ -19,7 +19,7 @@ public class PostController {
 
 	@Autowired
 	PostService ps;
-	@PostMapping("/createPost")
+	@PostMapping("/openCreatePost")
 	public String createPost(@RequestParam("caption") String caption,@RequestParam("photo")MultipartFile photo)
 	{
 		Post post=new Post();
@@ -33,11 +33,5 @@ public class PostController {
 		ps.createPost(post);
 		return "home";
 	}
-	@GetMapping("/showPosts")
-	public String showPosts(Model model)
-	{
-		    List<Post> allPosts=ps.getAllPosts();
-		    model.addAttribute("allPosts", allPosts);
-		    return "showPosts";
-	}
+	
 }
