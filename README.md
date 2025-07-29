@@ -112,20 +112,44 @@ src/
 
 ## 🔒 Token Usage in Postman
 
-**Login Response:**
+1. Register a User
+Send a POST request to /api/auth/register with the following JSON body:
 
-```json
+json
+Copy
+Edit
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+2. Login
+Send a POST request to /api/auth/login with the same credentials.
+You will receive a response containing accessToken and refreshToken:
+
+json
+Copy
+Edit
 {
   "accessToken": "xxxxx",
   "refreshToken": "yyyyy"
 }
-```
+3. Use Access Token
+To call protected APIs (like /api/user/profile), add the following header:
 
-Use these tokens in headers:
+makefile
+Copy
+Edit
+Authorization: Bearer <accessToken>
+4. Refresh Access Token
+If your access token expires, send a POST request to /api/auth/refresh-token with the refresh token in the body:
 
-```
-Authorization: Bearer <token>
-```
+json
+Copy
+Edit
+{
+  "refreshToken": "yyyyy"
+}
+This will return a new access token which you can use for further authenticated requests.
 
 ---
 
