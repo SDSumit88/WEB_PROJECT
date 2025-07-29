@@ -122,6 +122,8 @@ Edit
   "username": "your_username",
   "password": "your_password"
 }
+
+
 2. Login
 Send a POST request to /api/auth/login with the same credentials.
 You will receive a response containing accessToken and refreshToken:
@@ -133,6 +135,9 @@ Edit
   "accessToken": "xxxxx",
   "refreshToken": "yyyyy"
 }
+
+
+
 3. Use Access Token
 To call protected APIs (like /api/user/profile), add the following header:
 
@@ -140,6 +145,10 @@ makefile
 Copy
 Edit
 Authorization: Bearer <accessToken>
+
+
+
+
 4. Refresh Access Token
 If your access token expires, send a POST request to /api/auth/refresh-token with the refresh token in the body:
 
