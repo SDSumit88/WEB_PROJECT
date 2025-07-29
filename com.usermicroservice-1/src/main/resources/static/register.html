@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <input type="text" id="username" placeholder="Username" /><br>
+    <input type="password" id="password" placeholder="Password" /><br>
+    <button id="registerBtn">Register</button>
+
+    <p id="registerStatus" style="color: green;"></p>
+    <p><a href="index.html">Back to Login</a></p>
+
+    <script>
+        document.getElementById("registerBtn").addEventListener("click", function () {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            fetch("/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password })
+            })
+            .then(res => res.text())
+            .then(msg => {
+                document.getElementById("registerStatus").innerText = msg;
+            })
+            .catch(err => {
+                console.error("Error:", err);
+                document.getElementById("registerStatus").innerText = "Something went wrong!";
+            });
+        });
+    </script>
+</body>
+</html>
