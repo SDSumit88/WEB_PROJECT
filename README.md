@@ -7,7 +7,7 @@ This Java-based utility parses a JSON array of user data, filters the users base
 ##  Features
 
 -  Parse JSON input of users  
--  Filter users with age **greater than 25**  
+-  Filter users with age>=18  
 - Sort users by `lastLogin` (latest first)  
 -  Output result in clean JSON format  
 
@@ -19,33 +19,24 @@ Example:
 
 ```json
 [
-  {
-    "login": "johndoe",
-    "age": 30,
-    "lastLogin": "2024-12-01T10:30:00"
-  },
-  {
-    "login": "janedoe",
-    "age": 22,
-    "lastLogin": "2025-01-15T09:20:00"
-  }
+  {"firstName": "John", "lastName": "Doe", "age": 25, "lastLogin": "2025-07-08T12:34:56Z"},
+  {"firstName": "Jane", "lastName": "Smith", "age": 17, "lastLogin": "2025-06-01T09:00:00Z"},
+  {"firstName": "Alice", "lastName": "Johnson", "age": 21, "lastLogin": "2025-07-07T14:00:00Z"}
 ]
-```
+
 
 ---
 
 ## Output JSON Format
 
-After filtering (`age > 25`) and sorting (`latest login first`):
+After filtering (`age >=18`) and sorting (`latest login first`):
 
 ```json
 [
-  {
-    "login": "johndoe",
-    "age": 30,
-    "lastLogin": "2024-12-01T10:30:00"
-  }
+  { "name": "Alice Johnson", "lastLogin": "2025-07-07T14:00:00Z" },
+  { "name": "John Doe", "lastLogin": "2025-07-08T12:34:56Z" }
 ]
+
 ```
 
 ---
@@ -87,12 +78,12 @@ After filtering (`age > 25`) and sorting (`latest login first`):
 [
   {
     "login": "sumit",
-    "age": 28,
+    "age": 21,
     "lastLogin": "2025-07-20T18:15:00"
   },
   {
     "login": "rahul",
-    "age": 24,
+    "age": 17,
     "lastLogin": "2025-07-28T10:00:00"
   }
 ]
